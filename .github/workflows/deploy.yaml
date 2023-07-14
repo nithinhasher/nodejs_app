@@ -18,8 +18,8 @@ jobs:
         with:
           node-version: 14
 
-      - name: Authenticate with Google Cloud
-        run: gcloud auth login
+#       - name: Authenticate with Google Cloud
+#         run: gcloud auth login
 
       - name: Set Google Cloud account
         run: gcloud config set account ACCOUNT
