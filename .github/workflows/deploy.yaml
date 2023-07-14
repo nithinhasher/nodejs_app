@@ -24,7 +24,7 @@ jobs:
       - name: Build and push Docker image
         run: |
           docker build -t my-app-nodejs .
-          docker tag my-app gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/my-app-nodejs:${{ github.sha }}
+          docker tag my-app-nodejs gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/my-app-nodejs:${{ github.sha }}
           docker push gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/my-app-nodejs:${{ github.sha }}
           
       - name: Set up gcloud
