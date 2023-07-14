@@ -33,8 +33,8 @@ jobs:
           service_account_key: ${{ secrets.GCLOUD_SERVICE_KEY }}
           project_id: ${{ secrets.GCLOUD_PROJECT_ID }}
           export_default_credentials: true
-
-
+          service_account_email: service-account-for-instance@extended-bongo-392707.iam.gserviceaccount.com
+          
       - name: Deploy to GCE
         run: |
           gcloud compute instances update-container instance-nodejs \
