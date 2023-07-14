@@ -25,7 +25,6 @@ jobs:
             #export SERVICE_NAME=${{ github.event.repository.name }}
             #echo $SERVICE_NAME
             gcloud config set project ${{ secrets.GCLOUD_PROJECT_ID }}
-
       - name: Image
         run: |-
           gcloud auth configure-docker -q
