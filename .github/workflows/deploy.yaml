@@ -32,6 +32,8 @@ jobs:
           
 #       - name: Authenticate with Google Cloud
 #         run: gcloud auth login
+      - name: Configure Docker with gcloud credentials
+        run: gcloud auth configure-docker
 
       - name: Set Google Cloud account
         run: gcloud config set account ACCOUNT
@@ -43,6 +45,5 @@ jobs:
 
       - name: Deploy to GCE
         run: |
-          gcloud auth configure-docker
           gcloud compute scp --recurse . instance-nodejs:/
           gcloud compute ssh instance-nodejs --zone=asia-southeast1-a --command "cd / && npm install && npm start"
