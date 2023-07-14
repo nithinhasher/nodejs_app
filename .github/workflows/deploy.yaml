@@ -30,9 +30,6 @@ jobs:
         env:
           GCLOUD_SERVICE_KEY: ${{ secrets.GCLOUD_SERVICE_KEY }}
           
-      - name: Configure Docker with gcloud credentials
-        run: gcloud auth configure-docker
-          
 #       - name: Authenticate with Google Cloud
 #         run: gcloud auth login
 
