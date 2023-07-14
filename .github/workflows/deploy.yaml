@@ -43,5 +43,5 @@ jobs:
 
       - name: Deploy to GCE
         run: |
-          gcloud compute scp --recurse . instance-nodejs:/ -y
+          gcloud compute scp --recurse . instance-nodejs:/
           gcloud compute ssh instance-nodejs --zone=asia-southeast1-a --command "cd / && npm install && npm start"
