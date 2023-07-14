@@ -17,8 +17,9 @@ jobs:
         with:
           node-version: 14
 
-#       - name: Authenticate with Google Cloud
-#         run: gcloud auth login
+      - name: Authenticate with Google Cloud
+        run: gcloud auth login
+        
       - name: Activate Service Account
         run: |
           echo "$GCLOUD_SERVICE_KEY" > key.json
