@@ -34,12 +34,6 @@ jobs:
           export_default_credentials: true
           service_account_email: service-account-for-instance@extended-bongo-392707.iam.gserviceaccount.com
           
-      - name: Troubleshoot authentication
-        run: |
-          gcloud auth activate-service-account --key-file=key.json
-          gcloud auth list
-
-   
       - name: Deploy to GCE
         run: |
           gcloud compute instances update-container instance-nodejs \
