@@ -1,6 +1,6 @@
 # Dockerfile
 
-FROM node:14-alpine
+FROM node:14-alpine AS base
 
 WORKDIR /app
 
