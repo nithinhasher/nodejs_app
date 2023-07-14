@@ -18,11 +18,19 @@ jobs:
         with:
           node-version: 14
 
+      - name: Authenticate with Google Cloud
+        run: gcloud auth login
+
+      - name: Set Google Cloud account
+        run: gcloud config set account ACCOUNT
+        env:
+          ACCOUNT: nithinlokanath@gmail.com
+
       - name: Install dependencies
         run: npm install
 
       - name: Deploy to GCE
         run: |
           gcloud auth configure-docker
-          gcloud compute scp --recurse . instance-nodejs:~/
-          gcloud compute ssh instance-nodejs --zone=asia-southeast1-a --command "cd /path/to/destination && npm install && npm start"
+          gcloud compute scp --recurse . instance-nodejs:/
+          gcloud compute ssh instance-nodejs --zone=asia-southeast1-a --command "cd / && npm install && npm start"
