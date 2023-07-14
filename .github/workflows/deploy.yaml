@@ -39,4 +39,4 @@ jobs:
         run: |
           gcloud compute instances update-container instance-nodejs \
             --container-image=gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/my-app-nodejs:${{ github.sha }}
-          docker run -p 8080:8080 my-app-nodejs:latest
+          docker run -p 8080:8080 gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/my-app-nodejs:${{ github.sha }}
