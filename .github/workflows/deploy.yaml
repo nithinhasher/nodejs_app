@@ -18,7 +18,7 @@ jobs:
           node-version: 14
 
       - name: Authenticate with Google Cloud
-        run: gcloud auth login --console-only
+        run: gcloud auth login
         
       - name: Activate Service Account
         run: |
