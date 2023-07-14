@@ -27,8 +27,8 @@ jobs:
         env:
           GCLOUD_SERVICE_KEY: ${{ secrets.GCLOUD_SERVICE_KEY }}
           
-      - name: Authenticate with Google Cloud
-        run: gcloud auth login
+#       - name: Authenticate with Google Cloud
+#         run: gcloud auth login
 
       - name: Set Google Cloud account
         run: gcloud config set account ACCOUNT
