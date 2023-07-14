@@ -20,6 +20,12 @@ jobs:
 
 #       - name: Authenticate with Google Cloud
 #         run: gcloud auth login
+      - name: Activate Service Account
+        run: |
+          echo "$GCLOUD_SERVICE_KEY" > key.json
+          gcloud auth activate-service-account --key-file=key.json
+        env:
+          GCLOUD_SERVICE_KEY: ${{ secrets.GCLOUD_SERVICE_KEY }}
 
       - name: Set Google Cloud account
         run: gcloud config set account ACCOUNT
