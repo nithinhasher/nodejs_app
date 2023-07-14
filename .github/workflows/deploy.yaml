@@ -17,8 +17,8 @@ jobs:
         with:
           node-version: 14
 
-      - name: Authenticate with Google Cloud
-        run: gcloud auth login
+#       - name: Authenticate with Google Cloud
+#         run: gcloud auth login
         
       - name: Activate Service Account
         run: |
@@ -26,6 +26,9 @@ jobs:
           gcloud auth activate-service-account --key-file=key.json
         env:
           GCLOUD_SERVICE_KEY: ${{ secrets.GCLOUD_SERVICE_KEY }}
+          
+      - name: Authenticate with Google Cloud
+        run: gcloud auth login
 
       - name: Set Google Cloud account
         run: gcloud config set account ACCOUNT
