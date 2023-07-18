@@ -41,4 +41,4 @@ jobs:
                   docker push asia.gcr.io/$PROJECT_ID/$SERVICE_NAME
             - name: Deploy
               run: |
-                  gcloud compute instances update-container instance-nodejs --zone=asia-southeast1-a --container-image=gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/my-app:${{ github.sha }}
+                  gcloud run deploy $SERVICE_NAME --region $REGION --image asia.gcr.io/$PROJECT_ID/$SERVICE_NAME --allow-unauthenticated 
