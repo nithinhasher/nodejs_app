@@ -38,4 +38,5 @@ jobs:
             docker push asia.gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/my-app-nodejs:${{ github.sha }}
       - name: Deploy
         run: |
-            gcloud compute instances create-with-container instance-nodejs --zone=asia-southeast1-a --container-image gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/my-app:${{ github.sha }}
+            gcloud compute instances update-container instance-nodejs --zone=asia-southeast1-a --container-image=gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/my-app:${{ github.sha }}
+
