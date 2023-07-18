@@ -4,7 +4,6 @@ on:
   push:
     branches:
         - main
-
 # Environment variables available to all jobs and steps in this workflow
 env:
     PROJECT_ID: extended-bongo-392707
